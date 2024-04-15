@@ -1,301 +1,1269 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disney Brasil</title>
+  <link rel="stylesheet" name="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+	@import url('https://fonts.cdnfonts.com/css/matterhorn');
 
-  
-  
-  
-  
-  
+*{
+font: 14px / 1.1 Matterhorn, Helvetica, Arial, sans-serif; 
+font-weight: 700;
+      -webkit-font-smoothing: antialiased;
+}
+
+body{margin: 0;}
+
+li{
+  list-style: none;
+}
+
+.a { order: 1; }
+.b { order: 2; }
+.c { order: 4; }
+.d { order: 5; }
+.e { order: 6; }
+.f { order: 7; }
+.g { order: 8; }
+.h { order: 9; }
+.i { order: 10; }
+.j { order: 11; }
+
+.tendency h2 span{
+  color: white;
+}
+
+.iframe-div{
+  display:none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+      width: 100%;
+    height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+}
+
+.full{
+  height: 100%;
+}
+
+.out{
+  border: none;
+  background-color: transparent;
+  position: fixed;
+  left: 84%;
+  color: white;
+  font-size: 20px;
+  top: 5px;
+}
+
+#ytb{
+      width: 75%;
+    height: 88%;
+  position: relative;
+  top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  border: none;
+}
+#box-collapse{
+    display: flex;
+    background-color: #f5f5f5;
+    flex-direction: column;
+        -webkit-box-shadow: inset 0 1px 10px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 10px rgba(0,0,0,0.1);
+}
+
+.collapsestyle{
+  height: 100% !important;
+}
+
+header{
+  display:flex;
+  height: 63px;
+  margin-left: 10px;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+.main-header li{
+  display:flex;
+
+align-items: center;
+}
+
+.main-header li a{
+  padding: 25px 15px 25px;
+}
+header ul{
+  display:flex;
+  margin: 0;
+  padding: 0;
+  text-wrap: nowrap;
+}
+
+header a{
+  color: #030303;
+}
+
+#gotappend1{
+  display:none;
+  position:absolute;
+  color:white !important;
+  top: 63px;
+  z-index: 10000;
+      background-color: #232b2d;
+    min-width: min-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 14px 26px 14px;
+}
+
+#gotappend1 label{
+  padding: 14px 5px 14px 5px;
+}
+#gotappend1 label a{
+  color: white;
+  font-size: 15px;
+}
 
 
+#gotappend li a{color:white !important;}
+.centering{
+  display: flex; justify-content: center;
+  color: white !important;
+}
 
+li:hover #gotappend1, li:hover #gotappend{
+  display:grid;
+}
+
+li:focus #gotappend1{
+  display:inline;
+}
+
+li img{
+  width: 95px;
+  height: 40px;
+  margin: 10px;  
+}
+
+details{
+  width: 100%;
+}
+
+summary{
+  list-style:none;
+  cursor: pointer;
+}
+
+summary{
+  width: 100%;
+    padding: 25px 50px;
+    height: 9px;
+    font-size: 14px;
+    line-height: 0.85;
+    font-weight: 800;
+    color: #303030;
+    text-transform: uppercase;
+  border-bottom: 1px solid lightgray;
+}
+
+
+#check{
+  position: absolute;
+  visibility: hidden;
+}
+.barsearch{
+  width: 287px;
+    margin: 0;
+    background: #F5F5F5;
+    font-size: 1em;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #757575;
+    border-right: none;
+  border-radius: 6px 0px 0px 6px;
+  color:#707070;
+  font-weight: normal;
+}
+
+#slide-menu{
+  display: flex;
+  left: 0;
+  position: absolute;
+  top: 63px;
+  flex-direction: column;
+  height: 100%;
+  background: white;
+  width: 0;
+  text-wrap: nowrap;
+  border-top: 2px solid black;
+  z-index: 1000000;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+input:checked ~ header #slide-menu{
+  width: 100%;
+  height: auto;
+}
+
+.overlay{
+  position: absolute;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000000;
+  top: 143px;
+  display:none;
+}
+
+input:checked ~ header #slide-menu #buttonrow{
+ display: block; 
+}
+
+.menu1{
+  display:none;
+}
+
+.menu1 img{
+  width: 25px;
+  position: absolute;
+  z-index: 1000;
+  left: 21px;
+  top: 19px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+input:checked ~ label #teste{
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.menu1:after {
+  content: "×";
+    transform: scale(0);
+    transition: .5s;
+    left: 25px;
+    position: absolute;
+    top: 18px;
+  z-index: 10000;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+input:checked ~ .menu1:after{
+	transform: scale(1);
+transition-delay: 250ms;
+transition: .5s;
+}
+
+header button{
+  font-size: 0;
+    border: 1px solid #707070;
+    border-left: none;
+    height: 37px;
+    width: 48px;
+    background-color: #ffffff;
+    border-radius: 0 5px 5px 0;
+}
+
+header div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon{
+  width: 100%;
+  font-size: 20px;
+  color: blue;
+}
+
+.contentalign span, em{
+  color:white;
+  font-weight: normal;
+  font-size: 14px;!important
+}
+.imgdiv{
+  display: flex;
+  padding: 15px;
+      padding: 32px 104px;
+    display: flex;
+    position: absolute;
+    z-index: 16;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contentalign .assista{
+      padding: 16px 32px;
+  background-color: #c5dce0;
+    border: none;
+    color: #000000;
+  border-radius: 35px;
+  flex-direction: column;
+    width: 250px;
+    display: flex;
+    align-items: center;
+  margin: 16px;
+}
+
+.assista:hover{
+  background: #8ea8ad;
+}
+
+
+.leftside{
+  display: flex;
+  flex-direction: column;
+  width: 36%;
+  align-items: center;
+  text-align: center;
+}
+.imgdiv{
+  padding: 32px 104px;
+  display: flex;
+}
+
+p{
+  margin: 8px 0px 0px 0px;
+  line-height: 1.5;
+}
+
+.img2{
+  display:none;
+}
+
+.allcontent{
+  position: relative;
+    display: flex;
+  overflow:hidden;
+}
+
+.img1{
+  transition: .5s;
+}
+.carousel-container {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  height: auto;
+    width: -webkit-fill-available;
+    padding: 5px;
+  border-radius: 10px;
+    margin: 0px 10px;
+}
+
+.carousel-container button {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: -2rem;
+  font-size: 24px;
+  z-index: 2;
+    background-size: 24px 35px;
+    border-radius: 100%;
+    width: 44px;
+    height: 44px;
+    opacity: 1;
+    z-index: 5;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.16));
+    background-color: white;
+}
+
+.mybar{
+     position: absolute;
+    display: flex !important;
+    background: white;
+    width: 100%;
+    top: 63px;
+    z-index: 100000;
+  border-top: 2px solid black;
+}
+
+.aconteiner{
+  width: 25%;
+  color: #030303;
+}
+
+.stylebar{
+  border-top: 2px solid black;
+  width: 100%;
+    margin: 0;
+    background: #F5F5F5;
+    font-size: 1em;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #757575;
+    border-right: none;
+    border-radius: 6px 0px 0px 6px;
+    color: #707070;
+    font-weight: normal;
+  margin: 10px 0px 10px 10px;
+}
+
+#cancel{
+display: none;
+}
+
+.cancel{
+  display:flex !important;
+  color: black;
+    font-size: 18px;
+    font-weight: normal;
+    border: none;
+    margin: 10px;
+  height: auto;
+  width: auto;
+}
+
+#box-collapse label{
+  padding: 25px 20px;
+  border-bottom:1px solid lightgray;
+  width: 100%;
+}
+
+#box-collapse a{
+  margin-left:20px;
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+}
+
+.carousel-container button:hover{
+  filter: opacity(0.5);
+}
+
+#prevBtn {
+  left: 0;
+}
+
+#nextBtn {
+  right: 0;
+}
+
+section{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e5e5e5;
+}
+
+.imgbox{
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.imgbox1{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+img:focus{
+  border: 5px solid #0077da;
+}
+
+.centering::before{
+  position:relative;
+  display:block;
+}
+
+#gotappend1::before{
+  content: "";
+    position: absolute;
+    top:-8px;
+    bottom: -13px;
+    border-left: solid transparent 9px;
+    border-right: solid transparent 9px;
+    border-bottom: solid #232b2d 9px;
+    border-radius: 0;
+    background-color: transparent;
+    height: 0;
+    width: 0;
+      left:50%;
+  transform: translateX(-50%);
+}
+
+li.centering:hover ~ .centering::before{
+  display:block;
+}
+
+.imgbox h3{
+  margin: 0;
+}
+
+#gotappend .todissapear{
+  display:none !important;
+}
+
+.imgbox h3 span{
+  margin: 0px 15px;
+  font: 1.125rem Matterhorn, Helvetica, Arial, sans-serif; 
+  text-overflow:hidden;
+   line-height: 1.5rem;
+  display: -webkit-box;
+      font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+section h2 span{
+  font: 1.5rem Matterhorn, Helvetica, Arial, sans-serif; 
+  text-overflow:hidden;
+}
+
+section h4{
+  margin: 0px 15px;
+  font-size: 15px;
+  color: gray;
+  font-weight: normal;
+}
+
+.imgbox h3:hover, .fooorg a:hover, #gotappend1 label a:hover, #gotappend li a:hover, header a:hover, #gotappend li a:hover{
+  color:#1786eb !important;
+  cursor: pointer;
+}
+
+
+.menu:after{
+    content: "";
+    position: absolute;
+    background-color: #000;
+    transition: transform 300ms;
+    height: 2px;
+    width: 16px;
+  top: 36px;
+  left: 21px;
+}
+
+.leftside img{
+  max-width: 405px;
+}
+
+#search{
+  display: none;
+}
+
+.allcontent:hover .img1{
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+
+.tendency{
+      background: #030c3f;
+      color: white;
+  padding: 25px;
+      text-align: center;
+}
+
+#fix{
+  width: auto;
+}
+
+.tendency-flex{
+  display:flex;
+  gap: 25px;
+}
+.background-image{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: normal !important;
+}
+
+h3{
+  margin: 12px 15px;
+}
+span{
+  font-weight: normal !important;
+  color: #030303;
+  font-size: 18px;
+}
+
+.background-image img{
+  width: 100%;
+}
+
+.fheader{
+  color: #303030;
+  font-size: 14px;
+}
+
+.fheaderorg{
+  display:flex;
+  text-wrap:nowrap;
+flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 20px 50px 0px 50px;
+  align-items:center;
+}
+
+.fheaderorg li{
+  margin: 0 40px 20px 0;
+}
+
+.foo{
+  color:#303030;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+nav{
+  display:flex;
+  margin: 50px 50px 5px 50px;
+align-items:center;}
+
+.img4{
+  width:80px;
+  padding-bottom: 20px;
+}
+@media (max-width: 680px){
+  .img1{
+    display:none;
+  }
+  .img2{
+    display:block;
+  }
   
-  <label class="menu1" for="check"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilLh5oVlFz2kytfZfyAhVycxRhBowNNmhbwppTxaLN-Wjh0vrMBhI0t3PBVwzFpqDZ7FtvEATffP9CvPn2QlRipG9tkjtm7ySP6-DKr_3NCQgf5eyqV_yjtmrN8Tq4-oF8F0yfYy2MJWaUit_OzkOpVAPw32A7Nz9LVLgMuw3-tkZn-9Ivgfyor88C9BY/s320/line.png"/></label>
+  #ytb{
+    height:50%;
+  }
+  .imgdiv{
+    position:relative;
+    width: 100%;
+    top: 0;
+    transform: none;
+    background: #030c3f;
+    padding: 0;
+  }
+  .leftside{
+    width:auto;
+    padding: 20px 25px 35px 25px;
+  }
+  .allcontent{
+    flex-direction:column;
+  }
+  
+  .carousel-container button {display:none}
+    .tendency-flex{
+    flex-direction: column;
+  }
+  
+  nav{
+    flex-direction: column;
+    text-align: center;
+  }
+  .img3{
+    margin: 50px auto 0;
+  }
+  
+  .fheaderorg{
+    justify-content: center;
+    flex-direction: column;
+    margin: 25px 0px 5px 45px;
+  }
+}
+
+.contentalign{
+  width: inherit;
+}
+
+.fooorg{
+  text-align: center;
+  padding-top:50px;
+}
+
+.fooorg li{
+  padding: 0 8px 4px;
+}
+
+#lastfoo{
+  color: #303030;
+  font-weight:normal;
+  font-size: 12px;
+  text-align: center;
+  padding: 20px 20px 40px 20px;
+}
+
+#lastfoo span{
+color: #303030;
+  font-weight:normal;
+  font-size: 12px;
+  text-align: center;}
+
+@media (max-width: 560px){
+.imgbox {
+    width: 71%;
+}
+  
+  .aconteiner{
+    width: 71%;
+  }
+  .carousel-container {
+    width: 100%;
+  }
+  .leftside img{
+  max-width: 250px;
+  }
+}
+
+@media (max-width: 770px){
+  .menu1{
+    display:block;
+  }
+  
+  .main-header{
+    display:none;
+}
+  .overlay{
+    display:block;
+    z-index: 100000;
+  }
+  .icon{
+    display:none;
+  }
+  header{
+    justify-content: center;
+    margin: 0;
+  }
+  header ul{
+    gap: 0;
+  }
+  #search{
+    display: block;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 11px;
+    font-size: 20px;
+  }
+  li img{
+    width: 83px;
+    height:34px;
+    margin: 0;
+  }
+}
+
+</style>
+<body onresize="resizing()">
+  <input type="checkbox" id="check"></input>
+  <label class="menu1"onclick="myfunction()" for="check"><img id="teste" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilLh5oVlFz2kytfZfyAhVycxRhBowNNmhbwppTxaLN-Wjh0vrMBhI0t3PBVwzFpqDZ7FtvEATffP9CvPn2QlRipG9tkjtm7ySP6-DKr_3NCQgf5eyqV_yjtmrN8Tq4-oF8F0yfYy2MJWaUit_OzkOpVAPw32A7Nz9LVLgMuw3-tkZn-9Ivgfyor88C9BY/s320/line.png"></label>
 <header>
-  <div>
-    <details>
+  <div id="slide-menu">
+    <details id="buttonrow" for="box-collapse">
       <summary>DISNEY+</summary>
-    <div>
-      <label><a rel="noopener" href="https://www.disneyplus.com/?cid=DTCI-Site-DisneyBR-Site-Awareness-LatamOnGoing-BR-DisneyPlus-NA-SSLA-GlobalNav-BRSite-GlobalChrome-NA">Saiba Mais</a></label>
-      <label><a rel="noopener" href="https://www.starplus.com/comboplus?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-ArticleLink-Article-NA">Combo+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/disneyplusnews/sobre-disneyplus-o-servico-de-streaming-por-assinatura">Sobre o Disney+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/disneyplus">Dispon&#237;vel no Disney+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/disney+news">Disney+ News</a></label>
-      <label><a rel="noopener" href="https://help.disneyplus.com/csp">Central de Ajuda</a></label>
+    <div id="box-collapse" onclick="gesture()">
+      <label><a href="https://www.disneyplus.com/?cid=DTCI-Site-DisneyBR-Site-Awareness-LatamOnGoing-BR-DisneyPlus-NA-SSLA-GlobalNav-BRSite-GlobalChrome-NA">Saiba Mais</a></label>
+      <label><a href="https://www.starplus.com/comboplus?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-ArticleLink-Article-NA">Combo+</a></label>
+        <label><a href="https://www.disney.com.br/disneyplusnews/sobre-disneyplus-o-servico-de-streaming-por-assinatura">Sobre o Disney+</a></label>
+        <label><a href="https://www.disney.com.br/disneyplus">Disponível no Disney+</a></label>
+        <label><a href="https://www.disney.com.br/disney+news">Disney+ News</a></label>
+      <label><a href="https://help.disneyplus.com/csp">Central de Ajuda</a></label>
     </div></details>
-    <details>
+    <details id="buttonrow" for="box-collapse">
       <summary>STAR+</summary>
-    <div>
+    <div id="box-collapse" onclick="gesture()">
       
-      <label><a rel="noopener" href="https://www.starplus.com/?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-GlobalNav-Globalnavchrome_StarsiteBR_Starplus-NA">Assine o Star+</a></label>
-      <label><a rel="noopener" href="https://www.starplus.com/comboplus?cid=DTCI_STAR-Synergy-All-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-ArticleLink-articlestarbr-NA">Assine o Combo+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/star-plus">Dispon&#237;vel no Star+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/sobre-star-plus">Sobre o Star+</a></label>
-      <label><a rel="noopener" href="https://help.starplus.com/">Central de Ajuda</a></label>
+      <label><a href="https://www.starplus.com/?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-GlobalNav-Globalnavchrome_StarsiteBR_Starplus-NA">Assine o Star+</a></label>
+      <label><a href="https://www.starplus.com/comboplus?cid=DTCI_STAR-Synergy-All-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-ArticleLink-articlestarbr-NA">Assine o Combo+</a></label>
+        <label><a href="https://www.disney.com.br/star-plus">Disponível no Star+</a></label>
+        <label><a href="https://www.disney.com.br/sobre-star-plus">Sobre o Star+</a></label>
+      <label><a href="https://help.starplus.com/">Central de Ajuda</a></label>
     </div></details>
-    <details>
+    <details id="buttonrow" for="box-collapse">
       <summary>FILMES</summary>
-    <div>
+    <div id="box-collapse" onclick="gesture()">
       
-      <label><a rel="noopener" href="https://www.disney.com.br/filmes/wish-o-poder-dos-desejos">Wish: O Poder dos Desejos</a></label>
-      <label><a rel="noopener" href="https://www.disney.com.br/filmes/as-marvels">As Marvels</a></label>
-        <label><a rel="noopener" href="https://www.20thcenturystudios.com.br/">20th Century Studios</a></label>
+      <label><a href="https://www.disney.com.br/filmes/wish-o-poder-dos-desejos">Wish: O Poder dos Desejos</a></label>
+      <label><a href="https://www.disney.com.br/filmes/as-marvels">As Marvels</a></label>
+        <label><a href="https://www.20thcenturystudios.com.br/">20th Century Studios</a></label>
     </div></details>
-    <details>
-      <summary>S&#201;RIES</summary>
-    <div>
+    <details id="buttonrow" for="box-collapse">
+      <summary>SÉRIES</summary>
+    <div id="box-collapse" onclick="gesture()">
       
-      <label><a rel="noopener" href="https://www.disney.com.br/series/what-if">What iF...?</a></label>
-      <label><a rel="noopener" href="https://www.disney.com.br/series/eco">Eco</a></label>
+      <label><a href="https://www.disney.com.br/series/what-if">What iF...?</a></label>
+      <label><a href="https://www.disney.com.br/series/eco">Eco</a></label>
     </div></details>
-    <details>
-      <summary><a rel="noopener" href="https://radiodisney.com.br/" style="color:#303030;font-size:inherit;padding-bottom: 15px;padding-top: 20px;">R&#193;DIO DISNEY</a></summary></details>
-    <details>
+    <details id="buttonrow" for="box-collapse">
+      <summary><a href="https://radiodisney.com.br/" style="color:#303030; font-size:inherit; adding-right: 100%;
+    padding-bottom: 15px;
+    padding-top: 20px;">RÁDIO DISNEY</a></summary></details>
+    <details id="buttonrow" for="box-collapse">
       <summary>MAIS</summary>
-    <div>
+    <div id="box-collapse" onclick="gesture()">
       
-      <label><a rel="noopener" href="http://aniversariomagico.disney.com.br/">ANIVERS&#193;RIO M&#193;GICO</a></label>
-      <label><a rel="noopener" href="https://www.disney.com.br/disney100">DISNEY 100</a></label>
-      <label><a rel="noopener" href="https://www.disney.com.br/music">M&#218;SICAS</a></label>
-      <label><a rel="noopener" href="https://www.disney.com.br/espetaculos">ESPET&#193;CULOS</a></label>
+      <label><a href="http://aniversariomagico.disney.com.br/">ANIVERSÁRIO MÁGICO</a></label>
+      <label><a href="https://www.disney.com.br/disney100">DISNEY 100</a></label>
+      <label><a href="https://www.disney.com.br/music">MÚSICAS</a></label>
+      <label><a href="https://www.disney.com.br/espetaculos">ESPETÁCULOS</a></label>
     </div></details>
-    <details>
-      <summary><a rel="noopener" style="color:#303030;font-size:inherit;padding-bottom: 15px;padding-top: 20px;" href="https://www.disney.com.br/novidades/novidades/disney-traz-a-experiencia-d23-para-o-brasil-em-novembro-de-2024">D23 BRASIL</a></summary></details>
+    <details id="buttonrow" for="box-collapse">
+      <summary><a style="color:#303030; font-size:inherit; adding-right: 100%;
+    padding-bottom: 15px;
+    padding-top: 20px;" href="https://www.disney.com.br/novidades/novidades/disney-traz-a-experiencia-d23-para-o-brasil-em-novembro-de-2024">D23 BRASIL</a></summary></details>
     </div>
   
   <ul>
-    <li><img src="https://static-mh.content.disney.io/matterhorn/assets/goc/disney_logo_dark@2x-45d70f7dd57b.png"/></li>
+    <li><img src="https://static-mh.content.disney.io/matterhorn/assets/goc/disney_logo_dark@2x-45d70f7dd57b.png"</li>
     </ul>
   <ul class="main-header">
-    <li class="a centering"><a rel="noopener" href="https://www.disneyplus.com/?cid=DTCI-Synergy-DisneyBR-Site-Awareness-LatamOnGoing-BR-DisneyPlus-NA-SSLA-GlobalNav-BRSite-GlobalChrome-NA">DISNEY+</a><div class="todissapear"><label><a rel="noopener" href="https://www.disneyplus.com/?cid=DTCI-Site-DisneyBR-Site-Awareness-LatamOnGoing-BR-DisneyPlus-NA-SSLA-GlobalNav-BRSite-GlobalChrome-NA">Saiba Mais</a></label>
-      <label><a rel="noopener" href="https://www.starplus.com/comboplus?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-ArticleLink-Article-NA">Combo+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/disneyplusnews/sobre-disneyplus-o-servico-de-streaming-por-assinatura">Sobre o Disney+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/disneyplus">Dispon&#237;vel no Disney+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/disney+news">Disney+ News</a></label>
-      <label><a rel="noopener" href="https://help.disneyplus.com/csp">Central de Ajuda</a></label>
-    <div style="display:none;"></div>
-    </div></li><li class="b centering"><a rel="noopener" href="https://www.starplus.com/?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-GlobalNav-Globalnavchrome_StarsiteBR_Starplus-NA">STAR+</a><div class="todissapear"><label><a rel="noopener" href="https://www.starplus.com/?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-GlobalNav-Globalnavchrome_StarsiteBR_Starplus-NA">Assine o Star+</a></label>
-      <label><a rel="noopener" href="https://www.starplus.com/comboplus?cid=DTCI_STAR-Synergy-All-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-ArticleLink-articlestarbr-NA">Assine o Combo+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/star-plus">Dispon&#237;vel no Star+</a></label>
-        <label><a rel="noopener" href="https://www.disney.com.br/sobre-star-plus">Sobre o Star+</a></label>
-      <label><a rel="noopener" href="https://help.starplus.com/">Central de Ajuda</a></label></div></li>
-    <div style="display:none;"></div>
-    <li class="c centering"><a rel="noopener" href="https://disney.com.br/filmes">FILMES</a><div class="todissapear"><label><a rel="noopener" href="https://www.disney.com.br/filmes/wish-o-poder-dos-desejos">Wish: O Poder dos Desejos</a></label>
-      <label><a rel="noopener" href="https://www.disney.com.br/filmes/as-marvels">As Marvels</a></label>
-        <label><a rel="noopener" href="https://www.20thcenturystudios.com.br/">20th Century Studios</a></label></div></li>
-    <div style="display:none;"></div>
-    <li class="d centering"><a rel="noopener" href="https://disney.com.br/series">S&#201;RIES</a><div class="todissapear"><label><a rel="noopener" href="https://www.disney.com.br/series/what-if">What iF...?</a></label>
-      <label><a rel="noopener" href="https://www.disney.com.br/series/eco">Eco</a></label></div></li>
-    <div style="display:none;"></div>
-    <li class="e"><a rel="noopener" href="https://radiodisney.com.br/">R&#193;DIO DISNEY</a></li>
-    <div style="display:none;"></div>
-    <li class="f"><a rel="noopener" href="http://aniversariomagico.disney.com.br/">ANIVERS&#193;RIO M&#193;GICO</a></li>
-<li class="g"><a rel="noopener" href="https://www.disney.com.br/espetaculos">ESPET&#193;CULO</a></li>
-<li class="h"><a rel="noopener" href="https://www.disney.com.br/music">M&#218;SICA</a></li>
-<li class="i"><a rel="noopener" href="https://www.disney.com.br/novidades/novidades/disney-traz-a-experiencia-d23-para-o-brasil-em-novembro-de-2024">D23 BRASIL</a></li>
-    <li class="j centering"><a rel="noopener">MAIS</a><div><div></div></div></li>
+    <li class="a centering" id="headerbutton1"><a  href="https://www.disneyplus.com/?cid=DTCI-Synergy-DisneyBR-Site-Awareness-LatamOnGoing-BR-DisneyPlus-NA-SSLA-GlobalNav-BRSite-GlobalChrome-NA">DISNEY+</a><div id="gotappend1" class="todissapear"><label><a href="https://www.disneyplus.com/?cid=DTCI-Site-DisneyBR-Site-Awareness-LatamOnGoing-BR-DisneyPlus-NA-SSLA-GlobalNav-BRSite-GlobalChrome-NA">Saiba Mais</a></label>
+      <label><a href="https://www.starplus.com/comboplus?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-ArticleLink-Article-NA">Combo+</a></label>
+        <label><a href="https://www.disney.com.br/disneyplusnews/sobre-disneyplus-o-servico-de-streaming-por-assinatura">Sobre o Disney+</a></label>
+        <label><a href="https://www.disney.com.br/disneyplus">Disponível no Disney+</a></label>
+        <label><a href="https://www.disney.com.br/disney+news">Disney+ News</a></label>
+      <label><a href="https://help.disneyplus.com/csp">Central de Ajuda</a></label></li>
+    <div style="display:none"></div>
+    <li class="b centering" id="headerbutton2"><a href="https://www.starplus.com/?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-GlobalNav-Globalnavchrome_StarsiteBR_Starplus-NA">STAR+</a><div id="gotappend1" class="todissapear"><label><a href="https://www.starplus.com/?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-GlobalNav-Globalnavchrome_StarsiteBR_Starplus-NA">Assine o Star+</a></label>
+      <label><a href="https://www.starplus.com/comboplus?cid=DTCI_STAR-Synergy-All-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-ArticleLink-articlestarbr-NA">Assine o Combo+</a></label>
+        <label><a href="https://www.disney.com.br/star-plus">Disponível no Star+</a></label>
+        <label><a href="https://www.disney.com.br/sobre-star-plus">Sobre o Star+</a></label>
+      <label><a href="https://help.starplus.com/">Central de Ajuda</a></label></div></li>
+    <div style="display:none"></div>
+    <li class="c centering"  id="headerbutton3"><a href="https://disney.com.br/filmes">FILMES</a><div id="gotappend1" class="todissapear"><label><a href="https://www.disney.com.br/filmes/wish-o-poder-dos-desejos">Wish: O Poder dos Desejos</a></label>
+      <label><a href="https://www.disney.com.br/filmes/as-marvels">As Marvels</a></label>
+        <label><a href="https://www.20thcenturystudios.com.br/">20th Century Studios</a></label></div></li>
+    <div style="display:none"></div>
+    <li class="d centering" id="headerbutton4"><a href="https://disney.com.br/series">SÉRIES</a><div id="gotappend1" class="todissapear"><label><a href="https://www.disney.com.br/series/what-if">What iF...?</a></label>
+      <label><a href="https://www.disney.com.br/series/eco">Eco</a></label></div></li>
+    <div style="display:none"></div>
+    <li class="e" id="headerbutton5"><a href="https://radiodisney.com.br/">RÁDIO DISNEY</a></li>
+    <div style="display:none"></div>
+    <li class="f" id="headerbutton6"><a href="http://aniversariomagico.disney.com.br/">ANIVERSÁRIO MÁGICO</a></li>
+<li class="g" id="headerbutton7"><a href="https://www.disney.com.br/espetaculos">ESPETÁCULO</a></li>
+<li class="h" id="headerbutton8"><a href="https://www.disney.com.br/music">MÚSICA</a></li>
+<li class="i" id="headerbutton9"><a href="https://www.disney.com.br/novidades/novidades/disney-traz-a-experiencia-d23-para-o-brasil-em-novembro-de-2024">D23 BRASIL</a></li>
+    <li class="j centering"><a>MAIS</a><div id="gotappend1"><div id="gotappend"></div></div></li>
     
     </ul>
-  
-  <div class="icon"><div style="width: 100%;height: 100%;margin-right: 21px;">CANCEL<div class="overlay"></div></div>
+  <button id="search" class="fa fa-search" onclick="myTeste()"></button>
+  <div class="icon"><div style="width: 100%; height: 100%; margin-right: 21px;"><input type="text" class="barsearch"></input><button style="color: #1887c3; cursor:pointer;" class="fa fa-search"><button id="cancel" onclick="myTeste()">CANCEL</button><div class="overlay"></div></div>
     
   </div>
     </header>
   <div class="general">
       <div class="tohandle">
-         <a rel="noopener" href="https://www.disneyplus.com/en-br/movies/taylor-swift-the-eras-tour-taylors-version/OHLx94HKtS6X">
-      <div class="allcontent">
-        <img class="img1" width="100%" src="https://lumiere-a.akamaihd.net/v1/images/hb_taylorswift_theerastour_taylorsversion_3143_5f02e64a.jpeg?region=0,0,2048,878&amp;width=1536"/>
-        <img class="img2" width="100%" src="https://lumiere-a.akamaihd.net/v1/images/hb_taylorswift_theerastour_taylorsversion_mobile_3143_9e914be5.jpeg?region=0,0,1024,768"/>
+         <a href="https://www.disneyplus.com/en-br/movies/taylor-swift-the-eras-tour-taylors-version/OHLx94HKtS6X">
+      <div class="allcontent" href="https://www.disneyplus.com/en-br/movies/taylor-swift-the-eras-tour-taylors-version/OHLx94HKtS6X">
+        <img class="img1" width="100%" src="https://lumiere-a.akamaihd.net/v1/images/hb_taylorswift_theerastour_taylorsversion_3143_5f02e64a.jpeg?region=0,0,2048,878&width=1536">
+        <img class="img2" width="100%" src="https://lumiere-a.akamaihd.net/v1/images/hb_taylorswift_theerastour_taylorsversion_mobile_3143_9e914be5.jpeg?region=0,0,1024,768">
        <div class="imgdiv">
-        <div class="contentalign">
+        <div class="contentalign" href="https://www.disneyplus.com/en-br/movies/taylor-swift-the-eras-tour-taylors-version/OHLx94HKtS6X">
           <div class="leftside">
-          <img width="405" src="https://lumiere-a.akamaihd.net/v1/images/hb_taylorswift_theerastour_taylorsversion_logo_3143_6df2884e.png"/><p><i class="editor-text-italic"><em style="font-style:italic;">Taylor Swift | The Eras Tour (Taylor’s Version)</em></i><span>, na &#237;ntegra pela primeira vez apresentando a m&#250;sica “cardigan” e quatro m&#250;sicas ac&#250;sticas adicionais, j&#225; est&#225; dispon&#237;vel, somente no Disney+.</span></p>
-          Assista agora!
+          <img width="405" src="https://lumiere-a.akamaihd.net/v1/images/hb_taylorswift_theerastour_taylorsversion_logo_3143_6df2884e.png"><p><i class="editor-text-italic"><em style="font-style:italic;">Taylor Swift | The Eras Tour (Taylor’s Version)</em></i><span>, na íntegra pela primeira vez apresentando a música “cardigan” e quatro músicas acústicas adicionais, já está disponível, somente no Disney+.</span></p>
+          <button class="assista">Assista agora!</button>
         </div>
       </div>
      </div>
     </div>
-   </a></div><a rel="noopener" href="https://www.disneyplus.com/en-br/movies/taylor-swift-the-eras-tour-taylors-version/OHLx94HKtS6X">
+   </div>
    </a>
  <section>
-   <h2>  <span>V&#237;deos</span>    </h2>
+   <h2>  <span>Vídeos</span>    </h2>
   <div class="carousel-container">
-    <div class="carousel-slide">
-      <div class="imgbox" title="5UBl0rLEl0w?si=JjVm_KAC4-jUWB1O">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_07a78abd.jpeg?region=0,0,1280,720&amp;" alt="Image 1"/>
+    <div class="carousel-slide" id="allimg">
+      <div class="imgbox" onclick="showVideo()" title="5UBl0rLEl0w?si=JjVm_KAC4-jUWB1O">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_07a78abd.jpeg?region=0,0,1280,720&" alt="Image 1">
         <h3><span>  Taylor Swift | The Eras Tour (Taylor’s Version) | Trailer Oficial | Disney+    </span></h3>
       </div>
-      <div class="imgbox" title="yAZxx8t9zig?si=gWSjxyDZqjD_wNeL">
+      <div class="imgbox" onclick="showVideo()" title="yAZxx8t9zig?si=gWSjxyDZqjD_wNeL">
 
-      <img alt="Image 2"/>
+      <img id="fix"src="https://lumiere-a.akamaihd.net/v1/images/image_59c2dfe3.jpeg?region=0,0,1280,720&" alt="Image 2" id="allimg">
         <h3 class="title no_focus"> <span>  Divertida Mente 2 | Trailer Oficial Dublado    </span> </h3>
       </div>
-      <div class="imgbox" title="EzkZiJR662M?si=sq8mfmzp-wsjpr5j">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_639482f1.jpeg?region=0,0,1280,720&amp;" alt="Image 3"/>
+      <div class="imgbox" onclick="showVideo()" title="EzkZiJR662M?si=sq8mfmzp-wsjpr5j">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_639482f1.jpeg?region=0,0,1280,720&" alt="Image 3" id="allimg">
         <h3 class="title no_focus"> <span>  What If...? | Temporada 2 | Trailer Oficial Dublado | Disney+    </span> </h3>
         <h4 class="ptitle">What If…?</h4>
       </div>
-      <div class="imgbox" title="2eQN0mLqXgg?si=jp52i6c-RZORYAm3">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_d72a953d.jpeg?region=0,0,1280,720&amp;" alt="Image 5"/>
+      <div class="imgbox" onclick="showVideo()" title="2eQN0mLqXgg?si=jp52i6c-RZORYAm3">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_d72a953d.jpeg?region=0,0,1280,720&" alt="Image 5" id="allimg">
         <h3 class="title no_focus"> <span>  Eco | Trailer Oficial Dublado | Disney+    </span> </h3>
       </div>
-      <div class="imgbox" title="GjSmKaCSCPw?si=vwDpdDv7BsOX6EUZ">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_8a21f4e6.jpeg?region=0,0,1280,720&amp;" alt="Image 6"/>
+      <div class="imgbox" onclick="showVideo()" title="GjSmKaCSCPw?si=vwDpdDv7BsOX6EUZ">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_8a21f4e6.jpeg?region=0,0,1280,720&" alt="Image 6" id="allimg">
         <h3 class="title no_focus"> <span>  As Marvels | Trailer Oficial 2 Legendado    </span> </h3>
       </div>
-      <div class="imgbox" title="8jHiYle6nXg?si=aELXahhDscp3S1QV">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_1ee2aade.jpeg?region=0,0,1280,720&amp;" alt="Image 7"/>
+      <div class="imgbox" onclick="showVideo()" title="8jHiYle6nXg?si=aELXahhDscp3S1QV">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_1ee2aade.jpeg?region=0,0,1280,720&" id="allimg" alt="Image 7">
         <h3 class="title no_focus"> <span>  Disney100 | Para toda a vida    </span> </h3>
       </div>
-      <div class="imgbox" title="74z66bc3bCQ?si=y4PuZ0EpXlsW0t5E">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_27b213ef.jpeg?region=0,0,1280,720&amp;" alt="Image 8"/>  <h3 class="title no_focus"> <span>  Era Uma Vez Um Est&#250;dio - Trailer Oficial    </span> </h3>
+      <div class="imgbox" onclick="showVideo()" title="74z66bc3bCQ?si=y4PuZ0EpXlsW0t5E">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_27b213ef.jpeg?region=0,0,1280,720&" alt="Image 8">  <h3 class="title no_focus"> <span>  Era Uma Vez Um Estúdio - Trailer Oficial    </span> </h3>
       </div> 
-      <div class="imgbox" title="4d092VAgtR8?si=CR9cyeQ3ckHDnsv5">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_74bbe4fe.jpeg?region=0,0,1280,720&amp;" alt="Image 9"/><h3 class="title no_focus"> <span>  Voltando a Ler Mafalda | Trailer Oficial | Disney+    </span> </h3>  
+      <div class="imgbox" onclick="showVideo()" title="4d092VAgtR8?si=CR9cyeQ3ckHDnsv5">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_74bbe4fe.jpeg?region=0,0,1280,720&" alt="Image 9"><h3 class="title no_focus"> <span>  Voltando a Ler Mafalda | Trailer Oficial | Disney+    </span> </h3>  
       </div>   
-      <div class="imgbox" title="JMtgG10-1WM?si=sKCojaywYAyxXeKJ">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_4e3de609.jpeg?region=0,0,1920,1080&amp;" alt="Image 10"/>
+      <div class="imgbox" onclick="showVideo()" title="JMtgG10-1WM?si=sKCojaywYAyxXeKJ">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_4e3de609.jpeg?region=0,0,1920,1080&" alt="Image 10">
         <h3 class="title no_focus"> <span>  Loki | Temporada 2 | Featurette Oficial Legendado | Disney+    </span> </h3>
       </div>
-      <div class="imgbox" title="m8gK4I5mnUM?si=a6oVWEO5DRamfG5a">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_130ff820.jpeg?region=0,0,1920,1080&amp;"/>
+      <div class="imgbox" onclick="showVideo()" title="m8gK4I5mnUM?si=a6oVWEO5DRamfG5a">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_130ff820.jpeg?region=0,0,1920,1080&">
         <h3 class="title no_focus"> <span>  Percy Jackson e os Olimpianos | Teaser Oficial 2 Legendado | Disney+    </span> </h3>
       </div>
-      <div class="imgbox" title="Kwv8-VejVgk?si=9xvk0FdZPvMqbzmj">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_130ff820.jpeg?region=0,0,1920,1080&amp;"/>
+      <div class="imgbox" onclick="showVideo()" title="Kwv8-VejVgk?si=9xvk0FdZPvMqbzmj">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_130ff820.jpeg?region=0,0,1920,1080&">
         <h3 class="title no_focus"> <span>  Percy Jackson e os Olimpianos | Teaser Oficial 2 Dublado | Disney+    </span> </h3>
       </div>
-      <div class="imgbox" title="Vlb-WgK0DGI?si=FUY1ZKyCyaiKKbZp">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/image_2a65ed42.jpeg?region=0,0,1920,1080&amp;" alt="Image 12"/>
+      <div class="imgbox" onclick="showVideo()" title="Vlb-WgK0DGI?si=FUY1ZKyCyaiKKbZp">
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/image_2a65ed42.jpeg?region=0,0,1920,1080&" alt="Image 12">
         <h3 class="title no_focus"> <span>  L-POP | Trailer Oficial | Disney+    </span> </h3>
       </div>
     </div>
-    ❮
-    ❯
+    <button id="prevBtn">&#10094;</button>
+    <button id="nextBtn">&#10095;</button>
   </div>
 </section>
 <section class="section1">
   <div style="width:100%;">
     <div class="tendency">
-      <h2>  <span>Tend&#234;ncia no Disney+</span>    </h2>
+      <h2>  <span>Tendência no Disney+</span>    </h2>
       <div class="tendency-flex">
-        <a rel="noopener" style="color: white;" href="https://www.disneyplus.com/pt-br/series/what-if/7672ZVj1ZxU9">
-        <div class="background-image"> <img src="https://lumiere-a.akamaihd.net/v1/images/new_project_a32ea4fb.png?region=0,0,800,450&amp;width=600"/><h2><b><font size="2">ECO</font></b></h2><h3>N&#227;o perca a nova s&#233;rie da Marvel Studios<br/>
+        <a style="color: white;" href="https://www.disneyplus.com/pt-br/series/what-if/7672ZVj1ZxU9">
+        <div class="background-image"> <img class="" tabindex="-1" data-src="https://lumiere-a.akamaihd.net/v1/images/new_project_a32ea4fb.png?region=0,0,800,450" src="https://lumiere-a.akamaihd.net/v1/images/new_project_a32ea4fb.png?region=0,0,800,450&amp;width=600"><h2 role="none"><b><font size="2">ECO</font></b></h2><h3>Não perca a nova série da Marvel Studios<br>
           </h3></div></a>
-        <a rel="noopener" style="color: white;" href="https://www.disneyplus.com/pt-br/series/what-if/7672ZVj1ZxU9">
+        <a style="color: white;" href="https://www.disneyplus.com/pt-br/series/what-if/7672ZVj1ZxU9">
         <div class="background-image">
-          <img src="https://lumiere-a.akamaihd.net/v1/images/what-if-2-marvel-655630831cede_324d23d6.jpeg?region=0,0,800,450&amp;width=600"/>
-          <div class="title" style="color: #fefefe;">  <h2><b><font size="2">WHAT IF...?</font></b></h2>   </div><h3>Segunda temporada j&#225; dispon&#237;vel</h3>
+          <img class="" tabindex="-1" data-src="https://lumiere-a.akamaihd.net/v1/images/what-if-2-marvel-655630831cede_324d23d6.jpeg?region=0,0,800,450" data-orientation="landscape" data-legacy="true" src="https://lumiere-a.akamaihd.net/v1/images/what-if-2-marvel-655630831cede_324d23d6.jpeg?region=0,0,800,450&amp;width=600">
+          <div class="title" style="color: #fefefe">  <h2 role="none"><b><font size="2">WHAT IF...?</font></b></h2>   </div><h3>Segunda temporada já disponível</h3>
           </div></a>
     </div>
   </div>
-</div></section>
+</section>
    <section>
-   <h2>  <span>V&#237;deos</span>    </h2>
+   <h2>  <span>Vídeos</span>    </h2>
   <div class="carousel-container">
-    <div class="carousel-slide">
-      <a rel="noopener" class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
+    <div class="carousel-slide" id="carousel-slide">
+      <a class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
       <div class="imgbox1">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch5_classicshortsposters_mmwhenthecatsaway_24_8bfad07f.jpeg?region=0,0,540,810&amp;" alt="Image 2"/>
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch5_classicshortsposters_mmwhenthecatsaway_24_8bfad07f.jpeg?region=0,0,540,810&" alt="Image 2" id="allimg">
         <h3 class="title no_focus"><span>When the Cat’s Away (1929)    </span> </h3>
         </div></a>
-      <a rel="noopener" class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
+      <a class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
       <div class="imgbox1">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch5_classicshortsposters_mmfiddlingaround_241_221079fa.jpeg?region=0,0,540,810&amp;" alt="Image 3"/>
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch5_classicshortsposters_mmfiddlingaround_241_221079fa.jpeg?region=0,0,540,810&" alt="Image 3" id="allimg">
         <h3 class="title no_focus"> <span>   Fiddling Around (1930)     </span> </h3>
         </div></a>
-      <a rel="noopener" class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
+      <a class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
       <div class="imgbox1">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/p_d100_classicshorts_v1_6_2304_3787a44d.jpeg?region=0,0,540,810&amp;" alt="Image 5"/>
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/p_d100_classicshorts_v1_6_2304_3787a44d.jpeg?region=0,0,540,810&" alt="Image 5" id="allimg">
         <h3 class="title no_focus"> <span>  Barnyard Olympics (1932)    </span> </h3>
         </div></a>
-      <a rel="noopener" class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
+      <a class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
       <div class="imgbox1">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch4_merbabies_2368_3e71351a.jpeg?region=0,0,539,808&amp;" alt="Image 6"/>
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch4_merbabies_2368_3e71351a.jpeg?region=0,0,539,808&" alt="Image 6" id="allimg">
         <h3 class="title no_focus"> <span>  Merbabies (1938)    </span> </h3>
         </div></a>
-      <a rel="noopener" class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
+      <a class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
       <div class="imgbox1">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch3_trolleytroubles_2368_1ac8fe3c.jpeg?region=0,0,539,808&amp;" alt="Image 7"/>
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch3_trolleytroubles_2368_1ac8fe3c.jpeg?region=0,0,539,808&" id="allimg" alt="Image 7">
         <h3 class="title no_focus"> <span>  Trolley Troubles(1927)</span> </h3>
         </div></a>
-      <a rel="noopener" class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
+      <a class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
       <div class="imgbox1">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch3_allwet_2368_db648cbd.jpeg?region=0,0,539,808&amp;" alt="Image 8"/>  <h3 class="title no_focus"> <span>  All Wet(1927)</span> </h3>
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/p_d100_batch3_allwet_2368_db648cbd.jpeg?region=0,0,539,808&" alt="Image 8">  <h3 class="title no_focus"> <span>  All Wet(1927)</span> </h3>
       </div>
       </a>
-      <a rel="noopener" class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
+      <a class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
       <div class="imgbox1">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/p_d100_classicshorts_v1_5_2304_67a5998e.jpeg?region=0,0,540,810&amp;"/>
-        <h3 class="title no_focus"> <span>  Donald&#39;s Nephews(1938)    </span> </h3>
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/p_d100_classicshorts_v1_5_2304_67a5998e.jpeg?region=0,0,540,810&">
+        <h3 class="title no_focus"> <span>  Donald's Nephews(1938)    </span> </h3>
       </div>
       </a>
-      <a rel="noopener" class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
+      <a class="aconteiner" href="https://www.disneyplus.com/movies/when-the-cats-away/4kbRRSSoBaIg?cid=DTCI-Synergy-Disneycom-Site-Acquisition-DisneyClassics-US-Disney-Disney-EN-FeaturedPlaylist-AnimatedClassicShortsWhentheCatsAway-NA">
       <div class="imgbox1">
-      <img src="https://lumiere-a.akamaihd.net/v1/images/p_d100_classicshorts_v1_2_2304_22181c3d.jpeg?region=0,0,540,810"/>
+      <img id="fix" src="https://lumiere-a.akamaihd.net/v1/images/p_d100_classicshorts_v1_2_2304_22181c3d.jpeg?region=0,0,540,810">
         <h3 class="title no_focus"> <span>  Mickey Steam Roller(1934)    </span> </h3>
       </div>
       </a>
    </div>
-    ❮
-    ❯
+    <button id="prevBtn" class="prevBtn">&#10094;</button>
+    <button id="nextBtn" class="nextBtn">&#10095;</button>
   </div>
 </section>
  
-  <div class="iframe-div"><div class="full">✕
-    <iframe class="d2l-xspl-box" src="https://uninorteac-uniron.brightspace.com/d2l/lp/externalUrls/xspl?url=" data-original-html="&lt;iframe src=&quot;&quot;&gt;&lt;/iframe&gt;" frameborder="0" scrolling="no" allowfullscreen></iframe>
-</div></div>
+  <div class="iframe-div"><div class="full"><button class="out">✕</button>
+    <iframe id="ytb" src=""></iframe></div></div>
 <footer>
   <div>
     <div>
       <nav>
-        <a rel="noopener" href=""><img class="img3" src="https://static-mh.content.disney.io/matterhorn/assets/logos/disney_logo_dark-baa807690db7.png"/></a>
+        <a href=""><img class="img3" src="https://static-mh.content.disney.io/matterhorn/assets/logos/disney_logo_dark-baa807690db7.png"></a>
         <ul class="fheaderorg">
           
-          <li><a rel="noopener" class="fheader" href="https://www.disneyplus.com/?cid=DTCI-Site-DisneyBR-Site-Awareness-LatamOnGoing-BR-DisneyPlus-NA-SSLA-GlobalNav-BRSite-GlobalChrome-NA">DISNEY+</a></li>
-        <li><a rel="noopener" class="fheader" href="https://www.starplus.com/?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-GlobalNav-Globalnavchrome_StarsiteBR_Starplus-NA">STAR+</a></li>
-        <li><a rel="noopener" class="fheader" href="http://www.disney.com.br/filmes">FILMES</a></li>
-        <li><a rel="noopener" class="fheader" href="http://www.disney.com.br/series">R&#193;DIO DISNEY</a></li>
-        <li><a rel="noopener" class="fheader" href="http://aniversariomagico.disney.com.br/">ANIVERS&#193;RIO M&#193;GICO</a></li>
-        <li><a rel="noopener" class="fheader" href="https://www.disney.com.br/novidades/novidades/disney-traz-a-experiencia-d23-para-o-brasil-em-novembro-de-2024">D23 BRASIL</a></li>
-        <li><a rel="noopener" class="fheader" href="https://www.disneylatino.com/">DISNEY LATINO</a></li>
+          <li><a class="fheader" href="https://www.disneyplus.com/?cid=DTCI-Site-DisneyBR-Site-Awareness-LatamOnGoing-BR-DisneyPlus-NA-SSLA-GlobalNav-BRSite-GlobalChrome-NA">DISNEY+</a></li>
+        <li><a class="fheader" href="https://www.starplus.com/?cid=DTCI_STAR-Synergy-DisneyBR-Site-Awareness-StarPlus-BR-StarPlus-NA-PTBR-GlobalNav-Globalnavchrome_StarsiteBR_Starplus-NA">STAR+</a></li>
+        <li><a class="fheader" href="http://www.disney.com.br/filmes">FILMES</a></li>
+        <li><a class="fheader" href="http://www.disney.com.br/series">RÁDIO DISNEY</a></li>
+        <li><a class="fheader" href="http://aniversariomagico.disney.com.br/">ANIVERSÁRIO MÁGICO</a></li>
+        <li><a class="fheader" href="https://www.disney.com.br/novidades/novidades/disney-traz-a-experiencia-d23-para-o-brasil-em-novembro-de-2024">D23 BRASIL</a></li>
+        <li><a class="fheader" href="https://www.disneylatino.com/">DISNEY LATINO</a></li>
         </ul>
       </nav>
     </div>
   </div>
   <div>
     <div class="fooorg">
-      <a rel="noopener" href=""><img class="img4" src="https://static-mh.content.disney.io/matterhorn/assets/logos/disney_logo_dark-baa807690db7.png"/></a>
-      <div style="display: flex;text-wrap: nowrap;flex-wrap: wrap;justify-content:center;">
-        <a rel="noopener" class="foo" href="https://privacy.thewaltdisneycompany.com/pt-br/nossa-politica-de-privacidade/">Pol&#237;ticas de privacidade</a>
-        <a rel="noopener" class="foo" href="https://privacy.thewaltdisneycompany.com/pt-br/nossa-politica-de-privacidade/protecao-de-dados-no-brasil/">Prote&#231;&#227;o de Dados do Brasil</a>
-        <a rel="noopener" class="foo" href="https://disneytermsofuse.com/brazilian-portuguese/">Termos de Condi&#231;&#227;o e Uso</a>
-        <a rel="noopener" class="foo" href="https://empregos.disneycareers.com/">Oportunidades de Trabalho</a>
-        <a rel="noopener" class="foo" href="http://preferences-mgr.truste.com/?type=disneycolor&amp;affiliateId=115">An&#250;ncios com base em interesse</a>
+      <a href=""><img class="img4" src="https://static-mh.content.disney.io/matterhorn/assets/logos/disney_logo_dark-baa807690db7.png"></a>
+      <div style="display: flex;
+    text-wrap: nowrap;
+    flex-wrap: wrap;
+                  justify-content:center;">
+        <li><a class="foo" href="https://privacy.thewaltdisneycompany.com/pt-br/nossa-politica-de-privacidade/">Políticas de privacidade</a></li>
+        <li><a class="foo" href="https://privacy.thewaltdisneycompany.com/pt-br/nossa-politica-de-privacidade/protecao-de-dados-no-brasil/">Proteção de Dados do Brasil</a></li>
+        <li><a class="foo" href="https://disneytermsofuse.com/brazilian-portuguese/">Termos de Condição e Uso</a></li>
+        <li><a class="foo" href="https://empregos.disneycareers.com/">Oportunidades de Trabalho</a></li>
+        <li><a class="foo" href="http://preferences-mgr.truste.com/?type=disneycolor&affiliateId=115">Anúncios com base em interesse</a></li>
       </div>
     </div>
   </div>
-  <div>
-        &#169; Disney &#169; Disney•Pixar &#169; &amp; ™ Lucasfilm LTD &#169; 2024 MARVEL. Reservados todos os direitos, <span class="branding">Disney Entertainment</span>
+  <div id="lastfoo">
+        © Disney © Disney•Pixar © &amp; ™ Lucasfilm LTD © 2024 MARVEL. Reservados todos os direitos, <span class="branding">Disney Entertainment</span>
       </div>
 </footer>
 </div>
+<script>
+	var carouselSlide = document.querySelector('.carousel-slide');
+var prevBtn = document.getElementById('prevBtn');
+var nextBtn = document.getElementById('nextBtn');
+let counter = 0;
+
+let size = carouselSlide.children[0].clientWidth;
+carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+
+nextBtn.addEventListener('click', (number) => {
+  if(window.innerWidth > 560){var number = 4}
+  if(window.innerWidth < 760){var number = 1}
+  size = carouselSlide.children[0].clientWidth;
+  if (counter >= carouselSlide.children.length - number) return;
+    carouselSlide.style.transition = "transform 0.5s ease-in-out";
+  counter += number;
+  carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+});
+
+prevBtn.addEventListener('click', (teste) => {
+    if(window.innerWidth > 560){var number = 4}
+  if(window.innerWidth < 760){var number = 1}
+  size = carouselSlide.children[0].clientWidth;
+  if (counter <= 0) return;
+  carouselSlide.style.transition = "transform 0.5s ease-in-out";
+  
+  counter -= number;
+  carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+});
+
+carouselSlide.addEventListener('touchstart', touchStart);
+carouselSlide.addEventListener('touchmove', touchMove);
+
+function touchStart(e) {
+  startX = e.touches[0].clientX;
+}
+
+function touchMove(e, teste) {
+  if (!startX) return;
+  const moveX = e.touches[0].clientX;
+  const difference = startX - moveX;
+  if (Math.abs(difference) > 50) {
+    if (difference > 0) {
+      nextBtn.click();
+      console.log(window.innerWidth);
+    } else {
+      prevBtn.click();
+    }
+    startX = null;
+  }
+}
+
+var carouselSlide1 = document.querySelector('#carousel-slide');
+var prevBtn1 = document.querySelector('.prevBtn');
+var nextBtn1 = document.querySelector('.nextBtn');
+let counter1 = 0;
+
+let size1 = carouselSlide1.children[0].clientWidth;
+carouselSlide1.style.transform = `translateX(${-size1 * counter1}px)`;
+
+nextBtn1.addEventListener('click', (number1) => {
+  if(window.innerWidth > 560){var number1 = 4}
+  if(window.innerWidth < 760){var number1 = 1}
+  size1 = carouselSlide1.children[0].clientWidth;
+  if (counter1 >= carouselSlide1.children.length - number1) return;
+    carouselSlide1.style.transition = "transform 0.5s ease-in-out";
+  counter1 += number1;
+  carouselSlide1.style.transform = `translateX(${-size1 * counter1}px)`;
+  console.log(size1)
+});
+
+prevBtn1.addEventListener('click', (teste1) => {
+    if(window.innerWidth > 560){var number1 = 4}
+  if(window.innerWidth < 760){var number1 = 1}
+  size1 = carouselSlide1.children[0].clientWidth;
+  if (counter1 <= 0) return;
+  carouselSlide1.style.transition = "transform 0.5s ease-in-out";
+  
+  counter1 -= number1;
+  carouselSlide1.style.transform = `translateX(${-size1 * counter1}px)`;
+});
+
+carouselSlide1.addEventListener('touchstart', touchStart1);
+carouselSlide1.addEventListener('touchmove', touchMove1);
+
+function touchStart1(evt) {
+  startX1 = evt.touches[0].clientX;
+}
+
+function touchMove1(evt, teste1) {
+  if (!startX1) return;
+  const moveX1 = evt.touches[0].clientX;
+  const difference1 = startX1 - moveX1;
+  if (Math.abs(difference1) > 50) {
+    if (difference1 > 0) {
+      nextBtn1.click();
+      console.log(window.innerWidth);
+    } else {
+      prevBtn1.click();
+    }
+    startX1 = null;
+  }
+}
+
+function myfunction(check){
+  var check = document.querySelector("#check").checked;
+  console.log("teste");
+  console.log(check);
+setTimeout(() => {
+    if (check==false){
+  document.querySelector(".general").style.display = "none";
+    }
+}, 0);
+  document.querySelector("#search").style.display = "none";
+  setTimeout(() => {
+    if (check==true){
+  document.querySelector(".general").style.display = "block";
+      document.querySelector("#search").style.display = "block";
+    }
+}, 0);
+}
+
+function myTeste() {
+  if(window.innerWidth < 760){
+   var element = document.querySelector(".icon");
+  var element3 = document.getElementById("cancel");
+  var element2 = document.querySelector(".barsearch");
+   element.classList.toggle("mybar");
+  element2.classList.toggle("stylebar");
+  element3.classList.toggle("cancel");}
+}
+
+function gesture(){
+  event.target.classList.toggle("collapsestyle");
+}
+var link;
+function showVideo(link){
+  link = event.currentTarget.title;
+  console.log("https://youtu.be/" + link);
+  document.querySelector(".iframe-div").style.display="block";
+  document.getElementById("ytb").src = "https://www.youtube.com/embed/" + link;
+}
+
+document.querySelector(".out").addEventListener("click", (event) =>{
+  document.querySelector(".iframe-div").style.display="none";
+});
+
+function resizing(){
+  var x01 = window.matchMedia("(max-width: 1425px)");
+  var x00 = window.matchMedia("(max-width: 1425px)");
+  var x0 = window.matchMedia("(max-width: 1325px)");
+  var x1 = window.matchMedia("(max-width: 1225px)");
+  var x2 = window.matchMedia("(max-width: 1050px)");
+  var x3 = window.matchMedia("(max-width: 930px)");
+  var x4 = window.matchMedia("(max-width: 850px)");
+  if(window.innerWidth > 1460){  document.querySelector(".j").style.display="none";
+  }else{document.querySelector(".j").style.display="flex";
+                                 
+  }
+
+  if(x01.matches){var toappend9 = document.getElementById("headerbutton9");
+  var takeappend = document.getElementById("gotappend"); takeappend.append(toappend9);
+}else{var toappend9 = document.getElementById("headerbutton9");
+      var back = document.querySelector(".main-header");
+  back.append(toappend9);}
+  if(x00.matches){var toappend8 = document.getElementById("headerbutton8");
+  var takeappend = document.getElementById("gotappend"); takeappend.append(toappend8);
+}else{var toappend8 = document.getElementById("headerbutton8");
+      var back = document.querySelector(".main-header");
+  back.append(toappend8)}
+  if(x0.matches){var toappend7 = document.getElementById("headerbutton7");
+  var takeappend = document.getElementById("gotappend"); takeappend.append(toappend7);
+}else{var toappend7 = document.getElementById("headerbutton7");
+      var back = document.querySelector(".main-header");
+  back.append(toappend7)}
+if(x1.matches){var toappend6 = document.getElementById("headerbutton6");
+  var takeappend = document.getElementById("gotappend"); takeappend.append(toappend6);
+}else{var toappend6 = document.getElementById("headerbutton6");
+      var back = document.querySelector(".main-header");
+  back.append(toappend6)}
+  if(x2.matches){var toappend5 = document.getElementById("headerbutton5");
+  var takeappend = document.getElementById("gotappend"); takeappend.append(toappend5);
+}else{var toappend5 = document.getElementById("headerbutton5");
+      var back = document.querySelector(".main-header");
+  back.append(toappend5)}
+  if(x3.matches){var toappend4 = document.getElementById("headerbutton4");
+  var takeappend = document.getElementById("gotappend"); takeappend.append(toappend4);
+}else{var toappend4 = document.getElementById("headerbutton4");
+      var back = document.querySelector(".main-header");
+  back.append(toappend4)}
+  if(x4.matches){var toappend3 = document.getElementById("headerbutton3");
+  var takeappend = document.getElementById("gotappend"); takeappend.append(toappend3);
+}else{var toappend3 = document.getElementById("headerbutton3");
+      var back = document.querySelector(".main-header");
+  back.append(toappend3);}
+}
 
 
-
-<script type="module" src="https://s.brightspace.com/lib/bsi/20.24.3-265/unbundled/mathjax.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
-					if (document.querySelector('math') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
-						document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
-							elm.setAttribute('style', 'display: block; height: 0.5rem;');
-						});
-
-						window.D2L.MathJax.loadMathJax({
-							'outputScale': 1.5,
-							'renderLatex': true
-						});
-					}
-				});</script><script type="module" src="https://s.brightspace.com/lib/bsi/20.24.3-265/unbundled/prism.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
-					document.querySelectorAll('.d2l-code').forEach(code => {
-						window.D2L.Prism.formatCodeElement(code);
-					});
-				});</script></body></html>
+  window.addEventListener("load", function (event) {
+    resizing();
+  });
+</script>
+</body>
+</html>
